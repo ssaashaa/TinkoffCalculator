@@ -144,12 +144,26 @@ class ViewController: UIViewController {
         calculationHistory.removeAll()
     }
     
+    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "CALCULATIONS_LIST",
+              let calculationsListVC = segue.destination as? CalculationsListViewController
+        else { return }
+        
+        calculationsListVC.result = lastCalculatedResult == 0 ? "NoData" : numberFormatter.string(from: NSNumber(value: lastCalculatedResult))
+    }
+    
     @IBOutlet weak var label: UILabel!
     
     var calculationHistory: [CalculationHistoryItem] = []
     
     // Added number value to show it on screen
     lazy var enteredNumber: Double = 0
+    
+    lazy var lastCalculatedResult: Double = 0
     
     lazy var numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
@@ -160,6 +174,11 @@ class ViewController: UIViewController {
         
         return numberFormatter
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -181,6 +200,8 @@ class ViewController: UIViewController {
             currentResult = try operation.calculate(currentResult, number)
         }
         
+        lastCalculatedResult = currentResult
+        
         return currentResult
     }
     
@@ -197,6 +218,7 @@ class ViewController: UIViewController {
     // Added reset number method to zeroing number value
     func resetPreviousNumber() {
         enteredNumber = 0
+        lastCalculatedResult = 0
     }
     
     // Added update label method to update number on calc screen
