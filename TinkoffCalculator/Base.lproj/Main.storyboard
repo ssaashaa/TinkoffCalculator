@@ -311,6 +311,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Калькулятор" id="voB-Wq-dw1"/>
                     <connections>
+                        <outlet property="historyButton" destination="ele-P3-fla" id="fSH-IP-bWx"/>
                         <outlet property="label" destination="lmU-6H-ag4" id="GWm-Fh-qmQ"/>
                     </connections>
                 </viewController>
@@ -326,22 +327,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoData" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-lg-FyS" userLabel="Last Calculated Number">
-                                <rect key="frame" x="147.33333333333334" y="408" width="98.666666666666657" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HNi-OA-f0v">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yiz-3n-gbg"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
-                            <constraint firstItem="hd3-lg-FyS" firstAttribute="centerX" secondItem="x5z-aq-pyc" secondAttribute="centerX" id="F3U-G0-cKP"/>
-                            <constraint firstItem="hd3-lg-FyS" firstAttribute="centerY" secondItem="x5z-aq-pyc" secondAttribute="centerY" id="GZl-5k-q60"/>
+                            <constraint firstItem="Yiz-3n-gbg" firstAttribute="trailing" secondItem="HNi-OA-f0v" secondAttribute="trailing" id="IaP-Nl-IDL"/>
+                            <constraint firstItem="HNi-OA-f0v" firstAttribute="leading" secondItem="Yiz-3n-gbg" secondAttribute="leading" id="Mdd-0Z-2Xb"/>
+                            <constraint firstItem="Yiz-3n-gbg" firstAttribute="bottom" secondItem="HNi-OA-f0v" secondAttribute="bottom" id="XFM-er-Zwe"/>
+                            <constraint firstItem="HNi-OA-f0v" firstAttribute="top" secondItem="Yiz-3n-gbg" secondAttribute="top" id="kCh-Cp-Fb2"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calculationLabel" destination="hd3-lg-FyS" id="CtF-Ev-BBe"/>
+                        <outlet property="tableView" destination="HNi-OA-f0v" id="mLF-K2-hWm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Sq-hC-zOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

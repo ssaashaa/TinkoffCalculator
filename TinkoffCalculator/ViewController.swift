@@ -60,6 +60,33 @@ enum CalculationHistoryItem {
 }
 
 class ViewController: UIViewController {
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var historyButton: UIButton!
+    
+    var calculationHistory: [CalculationHistoryItem] = []
+    var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
+        
+    lazy var enteredNumber: Double = 0
+    lazy var lastCalculatedResult: Double = 0
+    
+    lazy var numberFormatter: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
+        
+        numberFormatter.usesGroupingSeparator = false
+        numberFormatter.locale = Locale(identifier: "ru_RU")
+        numberFormatter.numberStyle = .decimal
+        
+        return numberFormatter
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        resetLabelText()
+        resetLastCalculatedNumber()
+        
+        historyButton.accessibilityIdentifier = "historyButton"
+    }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let buttonText = sender.currentTitle else { return }
@@ -132,6 +159,7 @@ class ViewController: UIViewController {
         
         do {
             let result = try calculate()
+            calculations.append((calculationHistory, result))
             updateLabelText(result)
         } catch {
             label.text = "Ошибка"
@@ -143,37 +171,10 @@ class ViewController: UIViewController {
     @IBAction func showCalculationsList(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let calculationsListVC = sb.instantiateViewController(withIdentifier: "CalculationsListViewController")
-        
         if let vc = calculationsListVC as? CalculationsListViewController {
-            vc.result = lastCalculatedResult == 0 ? "NoData" : numberFormatter.string(from: NSNumber(value: lastCalculatedResult))
+            vc.calculations = calculations
         }
-        
         navigationController?.pushViewController(calculationsListVC, animated: true)
-    }
-    
-    @IBOutlet weak var label: UILabel!
-    
-    var calculationHistory: [CalculationHistoryItem] = []
-
-    lazy var enteredNumber: Double = 0
-    
-    lazy var lastCalculatedResult: Double = 0
-    
-    lazy var numberFormatter: NumberFormatter = {
-        let numberFormatter = NumberFormatter()
-        
-        numberFormatter.usesGroupingSeparator = false
-        numberFormatter.locale = Locale(identifier: "ru_RU")
-        numberFormatter.numberStyle = .decimal
-        
-        return numberFormatter
-    }()
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        resetLabelText()
-        resetLastCalculatedNumber()
     }
     
     func calculate() throws -> Double {
