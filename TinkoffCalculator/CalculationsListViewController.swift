@@ -24,11 +24,7 @@ class CalculationsListViewController: UIViewController {
     
     private func initialize() {
         modalPresentationStyle = .fullScreen
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.title = "Прошлые вычисления"
     }
     
     override func viewDidLoad() {

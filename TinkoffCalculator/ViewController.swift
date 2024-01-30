@@ -63,13 +63,10 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let buttonText = sender.currentTitle else { return }
-        
-        // Added condition to check if there were any number before
+
         if enteredNumber != 0 {
             resetLabelText()
         }
-        
-        // Added condition to check if label.text contains some weird stuff
         
         if let calcLabelText = label.text {
             for char in calcLabelText {
@@ -121,6 +118,7 @@ class ViewController: UIViewController {
     @IBAction func clearButtonPressed() {
         calculationHistory.removeAll()
         resetPreviousNumber()
+        resetLastCalculatedNumber()
         resetLabelText()
     }
     
@@ -134,8 +132,6 @@ class ViewController: UIViewController {
         
         do {
             let result = try calculate()
-            //      Tinkoff Solution
-            //            label.text = numberFormatter.string(from: NSNumber(value: result))
             updateLabelText(result)
         } catch {
             label.text = "Ошибка"
@@ -144,23 +140,21 @@ class ViewController: UIViewController {
         calculationHistory.removeAll()
     }
     
-    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
+    @IBAction func showCalculationsList(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let calculationsListVC = sb.instantiateViewController(withIdentifier: "CalculationsListViewController")
         
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "CALCULATIONS_LIST",
-              let calculationsListVC = segue.destination as? CalculationsListViewController
-        else { return }
+        if let vc = calculationsListVC as? CalculationsListViewController {
+            vc.result = lastCalculatedResult == 0 ? "NoData" : numberFormatter.string(from: NSNumber(value: lastCalculatedResult))
+        }
         
-        calculationsListVC.result = lastCalculatedResult == 0 ? "NoData" : numberFormatter.string(from: NSNumber(value: lastCalculatedResult))
+        navigationController?.pushViewController(calculationsListVC, animated: true)
     }
     
     @IBOutlet weak var label: UILabel!
     
     var calculationHistory: [CalculationHistoryItem] = []
-    
-    // Added number value to show it on screen
+
     lazy var enteredNumber: Double = 0
     
     lazy var lastCalculatedResult: Double = 0
@@ -174,16 +168,12 @@ class ViewController: UIViewController {
         
         return numberFormatter
     }()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resetLabelText()
+        resetLastCalculatedNumber()
     }
     
     func calculate() throws -> Double {
@@ -206,7 +196,6 @@ class ViewController: UIViewController {
     }
     
     func resetLabelText() {
-        // Added condition to check if there were any previous number
         if enteredNumber == 0 {
             label.text = "0"
         } else {
@@ -215,16 +204,17 @@ class ViewController: UIViewController {
         }
     }
     
-    // Added reset number method to zeroing number value
     func resetPreviousNumber() {
         enteredNumber = 0
+    }
+    
+    func resetLastCalculatedNumber() {
         lastCalculatedResult = 0
     }
     
-    // Added update label method to update number on calc screen
-    func updateLabelText(_ staticValue: Double) {
-        enteredNumber = staticValue
-        label.text = numberFormatter.string(from: NSNumber(value: staticValue))
+    func updateLabelText(_ enteredNumber: Double) {
+        self.enteredNumber = enteredNumber
+        label.text = numberFormatter.string(from: NSNumber(value: enteredNumber))
     }
     
 }

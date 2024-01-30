@@ -14,7 +14,7 @@
         <!--Калькулятор-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TinkoffCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Калькулятор" id="BYZ-38-t0r" customClass="ViewController" customModule="TinkoffCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,7 +192,7 @@
                                     <imageReference key="image" image="clock" catalog="system" symbolScale="large"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="MXo-Q1-Z3t" kind="show" identifier="CALCULATIONS_LIST" id="oZ8-nK-Rcx"/>
+                                    <action selector="showCalculationsList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2pR-ui-4Ts"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L78-gX-2By">
@@ -315,60 +315,38 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="Y9r-44-sIq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1043.5114503816794" y="3.5211267605633805"/>
         </scene>
         <!--Прошлые вычисления-->
-        <scene sceneID="ajG-tf-t9u">
+        <scene sceneID="YLM-Wu-quU">
             <objects>
-                <viewController id="MXo-Q1-Z3t" customClass="CalculationsListViewController" customModule="TinkoffCalculator" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="74X-HA-b56">
+                <viewController storyboardIdentifier="CalculationsListViewController" title="Прошлые вычисления" id="nNA-ry-KzN" customClass="CalculationsListViewController" customModule="TinkoffCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x5z-aq-pyc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="История вычислений" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="567-B5-GVn" userLabel="History Label">
-                                <rect key="frame" x="52.333333333333343" y="354.66666666666669" width="288.66666666666663" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NoData" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-lg-FyS" userLabel="Last Calculated Number">
+                                <rect key="frame" x="147.33333333333334" y="408" width="98.666666666666657" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfh-BK-jGm">
-                                <rect key="frame" x="196.66666666666666" y="460.66666666666669" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-gP-9rV">
-                                <rect key="frame" x="151.33333333333334" y="530.66666666666663" width="90.666666666666657" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Закрыть"/>
-                                <connections>
-                                    <segue destination="Y9r-44-sIq" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="U9o-eZ-JeX"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="ftC-IW-fZ1"/>
+                        <viewLayoutGuide key="safeArea" id="Yiz-3n-gbg"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
-                            <constraint firstItem="Pfh-BK-jGm" firstAttribute="top" secondItem="567-B5-GVn" secondAttribute="bottom" constant="70" id="3im-0h-S5d"/>
-                            <constraint firstItem="cpu-gP-9rV" firstAttribute="centerX" secondItem="74X-HA-b56" secondAttribute="centerX" id="7hF-sw-laR"/>
-                            <constraint firstItem="Pfh-BK-jGm" firstAttribute="centerY" secondItem="ftC-IW-fZ1" secondAttribute="centerY" id="C7S-51-E3Z"/>
-                            <constraint firstItem="567-B5-GVn" firstAttribute="centerX" secondItem="74X-HA-b56" secondAttribute="centerX" id="CmC-hF-sB4"/>
-                            <constraint firstItem="cpu-gP-9rV" firstAttribute="top" secondItem="Pfh-BK-jGm" secondAttribute="bottom" constant="70" id="NER-Dr-tUD"/>
-                            <constraint firstItem="Pfh-BK-jGm" firstAttribute="centerX" secondItem="ftC-IW-fZ1" secondAttribute="centerX" id="eGk-LI-6SC"/>
+                            <constraint firstItem="hd3-lg-FyS" firstAttribute="centerX" secondItem="x5z-aq-pyc" secondAttribute="centerX" id="F3U-G0-cKP"/>
+                            <constraint firstItem="hd3-lg-FyS" firstAttribute="centerY" secondItem="x5z-aq-pyc" secondAttribute="centerY" id="GZl-5k-q60"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Прошлые вычисления" id="oLB-Jd-orZ">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="ESE-Uo-5ik"/>
-                    </navigationItem>
                     <connections>
-                        <outlet property="calculationLabel" destination="Pfh-BK-jGm" id="Chv-LA-QN9"/>
+                        <outlet property="calculationLabel" destination="hd3-lg-FyS" id="CtF-Ev-BBe"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hOM-Xo-lnl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Sq-hC-zOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1910.6870229007632" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1944" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dpF-kb-bwH">
