@@ -17,8 +17,6 @@
 		5AD237952B63EC1400DD9F52 /* TinkoffCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD237942B63EC1400DD9F52 /* TinkoffCalculatorTests.swift */; };
 		5AD2379F2B63EC1400DD9F52 /* TinkoffCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD2379E2B63EC1400DD9F52 /* TinkoffCalculatorUITests.swift */; };
 		5AD237A12B63EC1400DD9F52 /* TinkoffCalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD237A02B63EC1400DD9F52 /* TinkoffCalculatorUITestsLaunchTests.swift */; };
-		5AD7545A2B691D5F007573C4 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD754592B691D5F007573C4 /* HistoryTableViewCell.swift */; };
-		5AD7545C2B691E1B007573C4 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD7545B2B691E1B007573C4 /* HistoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +51,6 @@
 		5AD2379A2B63EC1400DD9F52 /* TinkoffCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD2379E2B63EC1400DD9F52 /* TinkoffCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorUITests.swift; sourceTree = "<group>"; };
 		5AD237A02B63EC1400DD9F52 /* TinkoffCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5AD754592B691D5F007573C4 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
-		5AD7545B2B691E1B007573C4 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,14 +101,14 @@
 		5AD2377C2B63EC1000DD9F52 /* TinkoffCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				5AD754582B691D3F007573C4 /* History */,
+				5AD237862B63EC1400DD9F52 /* Assets.xcassets */,
 				5AD2377D2B63EC1000DD9F52 /* AppDelegate.swift */,
+				5AD2378B2B63EC1400DD9F52 /* Info.plist */,
 				5AD2377F2B63EC1000DD9F52 /* SceneDelegate.swift */,
 				5AD237812B63EC1000DD9F52 /* ViewController.swift */,
+				5A11BBD22B68181D003BEC35 /* CalculationsListViewController.swift */,
 				5AD237832B63EC1000DD9F52 /* Main.storyboard */,
-				5AD237862B63EC1400DD9F52 /* Assets.xcassets */,
 				5AD237882B63EC1400DD9F52 /* LaunchScreen.storyboard */,
-				5AD2378B2B63EC1400DD9F52 /* Info.plist */,
 			);
 			path = TinkoffCalculator;
 			sourceTree = "<group>";
@@ -132,16 +128,6 @@
 				5AD237A02B63EC1400DD9F52 /* TinkoffCalculatorUITestsLaunchTests.swift */,
 			);
 			path = TinkoffCalculatorUITests;
-			sourceTree = "<group>";
-		};
-		5AD754582B691D3F007573C4 /* History */ = {
-			isa = PBXGroup;
-			children = (
-				5A11BBD22B68181D003BEC35 /* CalculationsListViewController.swift */,
-				5AD754592B691D5F007573C4 /* HistoryTableViewCell.swift */,
-				5AD7545B2B691E1B007573C4 /* HistoryTableViewCell.xib */,
-			);
-			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +236,6 @@
 			files = (
 				5AD2378A2B63EC1400DD9F52 /* LaunchScreen.storyboard in Resources */,
 				5AD237872B63EC1400DD9F52 /* Assets.xcassets in Resources */,
-				5AD7545C2B691E1B007573C4 /* HistoryTableViewCell.xib in Resources */,
 				5AD237852B63EC1000DD9F52 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +265,6 @@
 				5AD237822B63EC1000DD9F52 /* ViewController.swift in Sources */,
 				5AD2377E2B63EC1000DD9F52 /* AppDelegate.swift in Sources */,
 				5AD237802B63EC1000DD9F52 /* SceneDelegate.swift in Sources */,
-				5AD7545A2B691D5F007573C4 /* HistoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

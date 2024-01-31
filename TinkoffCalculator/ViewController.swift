@@ -64,11 +64,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var historyButton: UIButton!
     
     var calculationHistory: [CalculationHistoryItem] = []
-    var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
-        
+
     lazy var enteredNumber: Double = 0
     lazy var lastCalculatedResult: Double = 0
-    
     lazy var numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
         
@@ -79,13 +77,19 @@ class ViewController: UIViewController {
         return numberFormatter
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationItem.title = "Калькулятор"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resetLabelText()
         resetLastCalculatedNumber()
         
-        historyButton.accessibilityIdentifier = "historyButton"
+        historyButton.accessibilityIdentifier = "toHistoryPageButton"
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -159,7 +163,6 @@ class ViewController: UIViewController {
         
         do {
             let result = try calculate()
-            calculations.append((calculationHistory, result))
             updateLabelText(result)
         } catch {
             label.text = "Ошибка"
@@ -171,9 +174,11 @@ class ViewController: UIViewController {
     @IBAction func showCalculationsList(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let calculationsListVC = sb.instantiateViewController(withIdentifier: "CalculationsListViewController")
+        
         if let vc = calculationsListVC as? CalculationsListViewController {
-            vc.calculations = calculations
+            vc.result = lastCalculatedResult == 0 ? "NoData" : numberFormatter.string(from: NSNumber(value: lastCalculatedResult))
         }
+        
         navigationController?.pushViewController(calculationsListVC, animated: true)
     }
     
