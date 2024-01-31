@@ -21,12 +21,7 @@ class CalculationsListViewController: UIViewController {
         super.init(coder: coder)
         initialize()
     }
-    
-    private func initialize() {
-        modalPresentationStyle = .fullScreen
-        navigationItem.title = "Прошлые вычисления"
-    }
-    
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +30,16 @@ class CalculationsListViewController: UIViewController {
         
         let nib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HistoryTableViewCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationItem.title = "Прошлые вычисления"
+    }
+    
+    private func initialize() {
+        modalPresentationStyle = .fullScreen
     }
     
     private func expressionToString(_ expression: [CalculationHistoryItem]) -> String {
@@ -65,10 +70,18 @@ extension CalculationsListViewController: UITableViewDelegate {
         return 90.0
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return getCurrentDate()
-    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))
 
+        let sectionText = UILabel()
+        sectionText.frame = CGRect.init(x: 20, y: 0, width: sectionHeader.frame.width-10, height: sectionHeader.frame.height-10)
+        sectionText.text = getCurrentDate()
+        sectionText.font = .systemFont(ofSize: 14, weight: .bold)
+
+        sectionHeader.addSubview(sectionText)
+
+        return sectionHeader
+    }
 }
 
 extension CalculationsListViewController: UITableViewDataSource {
@@ -82,5 +95,4 @@ extension CalculationsListViewController: UITableViewDataSource {
         cell.configure(with: expressionToString(historyItem.expression), result: String(historyItem.result))
         return cell
     }
-    
 }

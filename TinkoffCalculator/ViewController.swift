@@ -92,6 +92,12 @@ class ViewController: UIViewController {
         historyButton.accessibilityIdentifier = "toHistoryPageButton"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationItem.title = "Калькулятор"
+    }
+    
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let buttonText = sender.currentTitle else { return }
 
@@ -222,6 +228,5 @@ class ViewController: UIViewController {
         self.enteredNumber = enteredNumber
         label.text = numberFormatter.string(from: NSNumber(value: enteredNumber))
     }
-    
 }
 
