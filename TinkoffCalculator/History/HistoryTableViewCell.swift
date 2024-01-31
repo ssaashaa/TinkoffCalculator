@@ -8,7 +8,6 @@
 import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
-    
     @IBOutlet private weak var expressionLabel: UILabel!
     @IBOutlet private weak var resultLabel: UILabel!
     
