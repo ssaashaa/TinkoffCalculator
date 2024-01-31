@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         
         calculations = calculationHistoryStorage.loadHistory()
         
-        historyButton.accessibilityIdentifier = "historyButton"
+        historyButton.accessibilityIdentifier = "toHistoryPageButton"
     }
     
     override func viewWillAppear(_ animated: Bool) {
