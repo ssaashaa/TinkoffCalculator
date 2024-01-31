@@ -187,7 +187,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ele-P3-fla" userLabel="historyButton">
                                 <rect key="frame" x="0.0" y="353.33333333333331" width="98.333333333333329" height="93"/>
                                 <color key="backgroundColor" red="0.22751688959999999" green="0.22328779100000001" blue="0.23571991919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <accessibility key="accessibilityConfiguration" identifier="toHistoryPageButton"/>
+                                <accessibility key="accessibilityConfiguration" identifier="historyButton"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <imageReference key="image" image="clock" catalog="system" symbolScale="large"/>

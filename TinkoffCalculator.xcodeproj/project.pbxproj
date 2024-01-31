@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A11BBD32B68181D003BEC35 /* CalculationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BBD22B68181D003BEC35 /* CalculationsListViewController.swift */; };
 		5A97A2A72B6A679D001E9671 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A2A62B6A679D001E9671 /* Storage.swift */; };
+		5A97A2A92B6A9BFC001E9671 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A2A82B6A9BFC001E9671 /* AlertView.swift */; };
 		5AD2377E2B63EC1000DD9F52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD2377D2B63EC1000DD9F52 /* AppDelegate.swift */; };
 		5AD237802B63EC1000DD9F52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD2377F2B63EC1000DD9F52 /* SceneDelegate.swift */; };
 		5AD237822B63EC1000DD9F52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD237812B63EC1000DD9F52 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		5A11BBD22B68181D003BEC35 /* CalculationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsListViewController.swift; sourceTree = "<group>"; };
 		5A97A2A62B6A679D001E9671 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		5A97A2A82B6A9BFC001E9671 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		5AD2377A2B63EC1000DD9F52 /* TinkoffCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD2377D2B63EC1000DD9F52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AD2377F2B63EC1000DD9F52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		5AD237712B63EC1000DD9F52 = {
 			isa = PBXGroup;
 			children = (
+				5A97A2A82B6A9BFC001E9671 /* AlertView.swift */,
 				5AD2377C2B63EC1000DD9F52 /* TinkoffCalculator */,
 				5AD237932B63EC1400DD9F52 /* TinkoffCalculatorTests */,
 				5AD2379D2B63EC1400DD9F52 /* TinkoffCalculatorUITests */,
@@ -289,6 +292,7 @@
 			files = (
 				5A11BBD32B68181D003BEC35 /* CalculationsListViewController.swift in Sources */,
 				5AD237822B63EC1000DD9F52 /* ViewController.swift in Sources */,
+				5A97A2A92B6A9BFC001E9671 /* AlertView.swift in Sources */,
 				5AD2377E2B63EC1000DD9F52 /* AppDelegate.swift in Sources */,
 				5AD237802B63EC1000DD9F52 /* SceneDelegate.swift in Sources */,
 				5AD7545A2B691D5F007573C4 /* HistoryTableViewCell.swift in Sources */,

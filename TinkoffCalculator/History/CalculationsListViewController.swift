@@ -33,7 +33,7 @@ class CalculationsListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
         navigationItem.title = "Прошлые вычисления"
     }

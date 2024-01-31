@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol LongPressViewProtocol {
+    var shared: UIView { get }
+    
+    func startAnimation()
+    func stopAnimation()
+}
+
 enum CalculationError: Error {
     case dividedByZero
     case notANumber
@@ -63,10 +70,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var historyButton: UIButton!
     
+    private let alertView: AlertView = {
+        let screenBounds = UIScreen.main.bounds
+        let alertHeight: CGFloat = 100
+        let alertWidth: CGFloat = screenBounds.width - 40
+        let x: CGFloat = screenBounds.width / 2 - alertWidth / 2
+        let y: CGFloat = screenBounds.height / 2 - alertHeight / 2
+        let alertFrame = CGRect(x: x, y: y, width: alertWidth, height: alertHeight)
+        let alertView = AlertView(frame: alertFrame)
+        return alertView
+    }()
+    
+    var shared: UIView = {
+        let screenBounds = UIScreen.main.bounds
+        let alertHeight: CGFloat = 100
+        let alertWidth: CGFloat = screenBounds.width - 40
+        let x: CGFloat = screenBounds.width / 2 - alertWidth / 2
+        let y: CGFloat = screenBounds.height / 2 - alertHeight / 2
+        let alertFrame = CGRect(x: x, y: y, width: alertWidth, height: alertHeight)
+        let shared = UIView(frame: alertFrame)
+        shared.backgroundColor = .blue
+        shared.alpha = 0
+        return shared
+    }()
+    
     var calculationHistory: [CalculationHistoryItem] = []
     var calculations: [Calculation] = []
     let calculationHistoryStorage = CalculationHistoryStorage()
-
+    
     lazy var enteredNumber: Double = 0
     lazy var lastCalculatedResult: Double = 0
     lazy var numberFormatter: NumberFormatter = {
@@ -87,18 +118,25 @@ class ViewController: UIViewController {
         
         calculations = calculationHistoryStorage.loadHistory()
         
-        historyButton.accessibilityIdentifier = "toHistoryPageButton"
+        alertView.alpha = 0
+        alertView.alertText = "Вы нашли пасхалку!"
+        view.addSubview(alertView)
+        
+        shared.alpha = 0
+        view.addSubview(shared)
+        
+        historyButton.accessibilityIdentifier = "historyButton"
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
         navigationItem.title = "Калькулятор"
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let buttonText = sender.currentTitle else { return }
-
+        
         if enteredNumber != 0 {
             resetLabelText()
         }
@@ -126,6 +164,11 @@ class ViewController: UIViewController {
             label.text?.append(buttonText)
         }
         
+        if label.text == "3,141592" {
+            animateAlert()
+        }
+        
+        sender.animateTap()
     }
     
     @IBAction func operationButtonPressed(_ sender: UIButton) {
@@ -146,7 +189,7 @@ class ViewController: UIViewController {
             calculationHistory.removeLast()
             calculationHistory.append(.operation(buttonOperation))
         }
-
+        
         updateLabelText(labelNumber)
     }
     
@@ -173,6 +216,7 @@ class ViewController: UIViewController {
             updateLabelText(result)
         } catch {
             label.text = "Ошибка"
+            label.shake()
         }
         
         calculationHistory.removeAll()
@@ -226,6 +270,89 @@ class ViewController: UIViewController {
     func updateLabelText(_ enteredNumber: Double) {
         self.enteredNumber = enteredNumber
         label.text = numberFormatter.string(from: NSNumber(value: enteredNumber))
+    }
+    
+    func animateAlert() {
+        if !view.contains(alertView) {
+            alertView.alpha = 0
+            alertView.center = view.center
+            view.addSubview(alertView)
+        }
+        
+        UIView.animateKeyframes(withDuration: 2.0, delay: 0.5) {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
+                self.alertView.alpha = 1
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
+                var newCenter = self.label.center
+                newCenter.y -= self.alertView.bounds.height
+                self.alertView.center = newCenter
+            }
+        }
+    }
+}
+
+extension UILabel {
+    func shake() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.05
+        animation.repeatCount = 5
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: center.x - 5, y: center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: center.x + 5, y: center.y))
+        
+        layer.add(animation, forKey: "position")
+    }
+}
+
+extension UIButton {
+    func animateTap() {
+        let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        scaleAnimation.values = [1, 0.9, 1]
+        scaleAnimation.keyTimes = [0, 0.2, 1]
+        
+        let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+        opacityAnimation.values = [0.4, 0.8, 1]
+        opacityAnimation.keyTimes = [0, 0.2, 1]
+        
+        let animationGroup = CAAnimationGroup()
+        animationGroup.duration = 1.5
+        animationGroup.animations = [scaleAnimation, opacityAnimation]
+        
+        layer.add(animationGroup, forKey: "groupAnimation")
+    }
+}
+
+extension ViewController: LongPressViewProtocol {
+    func startAnimation() {
+        if !view.contains(shared) {
+            shared.alpha = 0
+            shared.center = view.center
+            view.addSubview(shared)
+        }
+        
+        UIView.animateKeyframes(withDuration: 2.0, delay: 0.5) {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
+                self.shared.alpha = 1
+            }
+            
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
+                var newCenter = self.label.center
+                newCenter.y -= self.shared.bounds.height
+                self.shared.center = newCenter
+            }
+        }
+    }
+    
+    func stopAnimation() {
+        UIView.animateKeyframes(withDuration: 2.0, delay: 0.5) {
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5) {
+                self.shared.alpha = 0
+            }
+        } completion: { _ in
+            self.shared.removeFromSuperview()
+        }
     }
 }
 
