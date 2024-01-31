@@ -64,7 +64,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var historyButton: UIButton!
     
     var calculationHistory: [CalculationHistoryItem] = []
-    var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
+    var calculations: [Calculation] = []
+    let calculationHistoryStorage = CalculationHistoryStorage()
 
     lazy var enteredNumber: Double = 0
     lazy var lastCalculatedResult: Double = 0
@@ -83,6 +84,8 @@ class ViewController: UIViewController {
         
         resetLabelText()
         resetLastCalculatedNumber()
+        
+        calculations = calculationHistoryStorage.loadHistory()
         
         historyButton.accessibilityIdentifier = "historyButton"
     }
@@ -164,7 +167,9 @@ class ViewController: UIViewController {
         
         do {
             let result = try calculate()
-            calculations.append((calculationHistory, result))
+            let newCalculation = Calculation(expression: calculationHistory, result: result, date: Date())
+            calculations.append(newCalculation)
+            calculationHistoryStorage.setHistory(calculation: calculations)
             updateLabelText(result)
         } catch {
             label.text = "Ошибка"

@@ -10,7 +10,7 @@ import UIKit
 class CalculationsListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
-    var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
+    var calculations: [Calculation] = []
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -57,11 +57,11 @@ class CalculationsListViewController: UIViewController {
         return result
     }
     
-    private func getCurrentDate() -> String {
+    private func getCurrentDate(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
+        dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
         
-        return dateFormatter.string(from: Date())
+        return dateFormatter.string(from: date)
     }
 }
 
@@ -75,7 +75,7 @@ extension CalculationsListViewController: UITableViewDelegate {
 
         let sectionText = UILabel()
         sectionText.frame = CGRect.init(x: 20, y: 0, width: sectionHeader.frame.width-10, height: sectionHeader.frame.height-10)
-        sectionText.text = getCurrentDate()
+        sectionText.text = getCurrentDate(calculations[section].date)
         sectionText.font = .systemFont(ofSize: 14, weight: .bold)
 
         sectionHeader.addSubview(sectionText)
@@ -86,12 +86,16 @@ extension CalculationsListViewController: UITableViewDelegate {
 
 extension CalculationsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return calculations.count
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        calculations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath) as! HistoryTableViewCell
-        let historyItem = calculations[indexPath.row]
+        let historyItem = calculations[indexPath.section]
         cell.configure(with: expressionToString(historyItem.expression), result: String(historyItem.result))
         return cell
     }
