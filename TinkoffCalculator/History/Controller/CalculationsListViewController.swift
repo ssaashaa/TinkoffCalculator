@@ -8,10 +8,10 @@
 import UIKit
 
 class CalculationsListViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     var calculations: [Calculation] = []
-
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initialize()
@@ -21,7 +21,7 @@ class CalculationsListViewController: UIViewController {
         super.init(coder: coder)
         initialize()
     }
-            
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,15 +71,21 @@ extension CalculationsListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionHeader = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 40))
-
+        let sectionHeader = UIView(frame: CGRect(x: 0,
+                                                 y: 0,
+                                                 width: tableView.frame.width,
+                                                 height: 40))
         let sectionText = UILabel()
-        sectionText.frame = CGRect.init(x: 20, y: 0, width: sectionHeader.frame.width-10, height: sectionHeader.frame.height-10)
+        sectionText.frame = CGRect(x: 20,
+                                   y: 0,
+                                   width: sectionHeader.frame.width - 10,
+                                   height: sectionHeader.frame.height - 10)
+        
         sectionText.text = getCurrentDate(calculations[section].date)
         sectionText.font = .systemFont(ofSize: 14, weight: .bold)
-
+        
         sectionHeader.addSubview(sectionText)
-
+        
         return sectionHeader
     }
 }
@@ -94,7 +100,8 @@ extension CalculationsListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath) as! HistoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell",
+                                                 for: indexPath) as! HistoryTableViewCell
         let historyItem = calculations[indexPath.section]
         cell.configure(with: expressionToString(historyItem.expression), result: String(historyItem.result))
         return cell

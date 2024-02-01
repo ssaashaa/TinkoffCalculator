@@ -10,9 +10,12 @@
 		5A11BBD32B68181D003BEC35 /* CalculationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A11BBD22B68181D003BEC35 /* CalculationsListViewController.swift */; };
 		5A97A2A72B6A679D001E9671 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A2A62B6A679D001E9671 /* Storage.swift */; };
 		5A97A2A92B6A9BFC001E9671 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A2A82B6A9BFC001E9671 /* AlertView.swift */; };
+		5A97A2B82B6BF09B001E9671 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A2B72B6BF09B001E9671 /* Model.swift */; };
+		5A97A2BA2B6BF5D8001E9671 /* UILabel+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A2B92B6BF5D8001E9671 /* UILabel+Animation.swift */; };
+		5A97A2BC2B6BF674001E9671 /* UIButton+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A97A2BB2B6BF674001E9671 /* UIButton+Animation.swift */; };
 		5AD2377E2B63EC1000DD9F52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD2377D2B63EC1000DD9F52 /* AppDelegate.swift */; };
 		5AD237802B63EC1000DD9F52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD2377F2B63EC1000DD9F52 /* SceneDelegate.swift */; };
-		5AD237822B63EC1000DD9F52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD237812B63EC1000DD9F52 /* ViewController.swift */; };
+		5AD237822B63EC1000DD9F52 /* CalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD237812B63EC1000DD9F52 /* CalculationViewController.swift */; };
 		5AD237852B63EC1000DD9F52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AD237832B63EC1000DD9F52 /* Main.storyboard */; };
 		5AD237872B63EC1400DD9F52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AD237862B63EC1400DD9F52 /* Assets.xcassets */; };
 		5AD2378A2B63EC1400DD9F52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AD237882B63EC1400DD9F52 /* LaunchScreen.storyboard */; };
@@ -44,10 +47,13 @@
 		5A11BBD22B68181D003BEC35 /* CalculationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsListViewController.swift; sourceTree = "<group>"; };
 		5A97A2A62B6A679D001E9671 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		5A97A2A82B6A9BFC001E9671 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		5A97A2B72B6BF09B001E9671 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5A97A2B92B6BF5D8001E9671 /* UILabel+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Animation.swift"; sourceTree = "<group>"; };
+		5A97A2BB2B6BF674001E9671 /* UIButton+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Animation.swift"; sourceTree = "<group>"; };
 		5AD2377A2B63EC1000DD9F52 /* TinkoffCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD2377D2B63EC1000DD9F52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AD2377F2B63EC1000DD9F52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5AD237812B63EC1000DD9F52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AD237812B63EC1000DD9F52 /* CalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationViewController.swift; sourceTree = "<group>"; };
 		5AD237842B63EC1000DD9F52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AD237862B63EC1400DD9F52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AD237892B63EC1400DD9F52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,10 +100,120 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		5A97A2AB2B6BEEFD001E9671 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5A97A2B02B6BEF79001E9671 /* Model */,
+				5A97A2AF2B6BEF75001E9671 /* View */,
+				5A97A2AE2B6BEF6F001E9671 /* Controller */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5A97A2AC2B6BEF19001E9671 /* Calculation */ = {
+			isa = PBXGroup;
+			children = (
+				5A97A2B32B6BEF8E001E9671 /* Model */,
+				5A97A2B22B6BEF8A001E9671 /* View */,
+				5A97A2B12B6BEF84001E9671 /* Controller */,
+			);
+			path = Calculation;
+			sourceTree = "<group>";
+		};
+		5A97A2AD2B6BEF42001E9671 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AD237862B63EC1400DD9F52 /* Assets.xcassets */,
+				5AD2378B2B63EC1400DD9F52 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A97A2AE2B6BEF6F001E9671 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5AD2377D2B63EC1000DD9F52 /* AppDelegate.swift */,
+				5AD2377F2B63EC1000DD9F52 /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5A97A2AF2B6BEF75001E9671 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AD237882B63EC1400DD9F52 /* LaunchScreen.storyboard */,
+				5A97A2A82B6A9BFC001E9671 /* AlertView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A97A2B02B6BEF79001E9671 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A97A2B12B6BEF84001E9671 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5AD237812B63EC1000DD9F52 /* CalculationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5A97A2B22B6BEF8A001E9671 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AD237832B63EC1000DD9F52 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A97A2B32B6BEF8E001E9671 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A97A2B72B6BF09B001E9671 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A97A2B42B6BEF93001E9671 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5A11BBD22B68181D003BEC35 /* CalculationsListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5A97A2B52B6BEF99001E9671 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AD754592B691D5F007573C4 /* HistoryTableViewCell.swift */,
+				5AD7545B2B691E1B007573C4 /* HistoryTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5A97A2B62B6BEF9C001E9671 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A97A2BD2B6BF6FC001E9671 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A97A2B92B6BF5D8001E9671 /* UILabel+Animation.swift */,
+				5A97A2BB2B6BF674001E9671 /* UIButton+Animation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5AD237712B63EC1000DD9F52 = {
 			isa = PBXGroup;
 			children = (
-				5A97A2A82B6A9BFC001E9671 /* AlertView.swift */,
 				5AD2377C2B63EC1000DD9F52 /* TinkoffCalculator */,
 				5AD237932B63EC1400DD9F52 /* TinkoffCalculatorTests */,
 				5AD2379D2B63EC1400DD9F52 /* TinkoffCalculatorUITests */,
@@ -118,15 +234,12 @@
 		5AD2377C2B63EC1000DD9F52 /* TinkoffCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				5A97A2A52B6A676F001E9671 /* Storage */,
+				5A97A2AB2B6BEEFD001E9671 /* Application */,
+				5A97A2AC2B6BEF19001E9671 /* Calculation */,
 				5AD754582B691D3F007573C4 /* History */,
-				5AD237862B63EC1400DD9F52 /* Assets.xcassets */,
-				5AD2377D2B63EC1000DD9F52 /* AppDelegate.swift */,
-				5AD2378B2B63EC1400DD9F52 /* Info.plist */,
-				5AD2377F2B63EC1000DD9F52 /* SceneDelegate.swift */,
-				5AD237812B63EC1000DD9F52 /* ViewController.swift */,
-				5AD237832B63EC1000DD9F52 /* Main.storyboard */,
-				5AD237882B63EC1400DD9F52 /* LaunchScreen.storyboard */,
+				5A97A2A52B6A676F001E9671 /* Storage */,
+				5A97A2BD2B6BF6FC001E9671 /* Extensions */,
+				5A97A2AD2B6BEF42001E9671 /* Supporting Files */,
 			);
 			path = TinkoffCalculator;
 			sourceTree = "<group>";
@@ -151,9 +264,9 @@
 		5AD754582B691D3F007573C4 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				5A11BBD22B68181D003BEC35 /* CalculationsListViewController.swift */,
-				5AD754592B691D5F007573C4 /* HistoryTableViewCell.swift */,
-				5AD7545B2B691E1B007573C4 /* HistoryTableViewCell.xib */,
+				5A97A2B62B6BEF9C001E9671 /* Model */,
+				5A97A2B52B6BEF99001E9671 /* View */,
+				5A97A2B42B6BEF93001E9671 /* Controller */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -168,6 +281,7 @@
 				5AD237762B63EC1000DD9F52 /* Sources */,
 				5AD237772B63EC1000DD9F52 /* Frameworks */,
 				5AD237782B63EC1000DD9F52 /* Resources */,
+				5A97A2AA2B6BEB5B001E9671 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -285,18 +399,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A97A2AA2B6BEB5B001E9671 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5AD237762B63EC1000DD9F52 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5A11BBD32B68181D003BEC35 /* CalculationsListViewController.swift in Sources */,
-				5AD237822B63EC1000DD9F52 /* ViewController.swift in Sources */,
+				5A97A2BA2B6BF5D8001E9671 /* UILabel+Animation.swift in Sources */,
+				5AD237822B63EC1000DD9F52 /* CalculationViewController.swift in Sources */,
 				5A97A2A92B6A9BFC001E9671 /* AlertView.swift in Sources */,
+				5A97A2BC2B6BF674001E9671 /* UIButton+Animation.swift in Sources */,
 				5AD2377E2B63EC1000DD9F52 /* AppDelegate.swift in Sources */,
 				5AD237802B63EC1000DD9F52 /* SceneDelegate.swift in Sources */,
 				5AD7545A2B691D5F007573C4 /* HistoryTableViewCell.swift in Sources */,
 				5A97A2A72B6A679D001E9671 /* Storage.swift in Sources */,
+				5A97A2B82B6BF09B001E9671 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +542,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "TinkoffCalculator/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -461,6 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "TinkoffCalculator/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -479,8 +619,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A9DYLZK6WL;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TinkoffCalculator/Info.plist;
+				INFOPLIST_FILE = "TinkoffCalculator/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -508,8 +649,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A9DYLZK6WL;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TinkoffCalculator/Info.plist;
+				INFOPLIST_FILE = "TinkoffCalculator/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

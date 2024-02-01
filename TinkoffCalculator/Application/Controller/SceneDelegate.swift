@@ -7,41 +7,17 @@
 
 import UIKit
 
-protocol LongPressGestureAdder: UIGestureRecognizerDelegate {
-    func addGestureRecognizer()
-}
-
-class SceneDelegate: UIResponder, UIWindowSceneDelegate, LongPressGestureAdder {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
-    func addGestureRecognizer() {
-        let longPress = UILongPressGestureRecognizer()
-        longPress.addTarget(self, action: #selector(showAnimatedView(sender:)))
-        window?.addGestureRecognizer(longPress)
-    }
-    
-    @objc private func showAnimatedView(sender: UILongPressGestureRecognizer) {
-        if sender.state == .began {
-            if let nc = self.window?.rootViewController as? UINavigationController,
-               let vc = nc.viewControllers.first as? ViewController {
-                vc.startAnimation()
-            }
-        } else if sender.state == .ended {
-            if let nc = self.window?.rootViewController as? UINavigationController,
-               let vc = nc.viewControllers.first as? ViewController {
-                vc.stopAnimation()
-            }
-        }
-    }
-    
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-                
-        addGestureRecognizer()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

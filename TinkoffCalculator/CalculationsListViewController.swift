@@ -8,7 +8,7 @@
 import UIKit
 
 class CalculationsListViewController: UIViewController {
-    @IBOutlet weak var calculationLabel: UILabel!
+    @IBOutlet private weak var calculationLabel: UILabel!
     
     var result: String?
     
@@ -29,12 +29,12 @@ class CalculationsListViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         calculationLabel.text = result
     }
     
     private func initialize() {
         modalPresentationStyle = .fullScreen
-        
     }
-    
 }

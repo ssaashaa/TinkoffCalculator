@@ -5,8 +5,8 @@
 //  Created by Sasha Stryapkov on 26.01.2024.
 //
 
-import XCTest
 @testable import TinkoffCalculator
+import XCTest
 
 final class TinkoffCalculatorTests: XCTestCase {
 
