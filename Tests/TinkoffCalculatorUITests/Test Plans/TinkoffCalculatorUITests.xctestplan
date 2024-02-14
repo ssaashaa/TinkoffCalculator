@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "66FAA342-1F79-4868-8079-BDAB7FBAAE87",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:TinkoffCalculator.xcodeproj",
+        "identifier" : "5AD237992B63EC1400DD9F52",
+        "name" : "TinkoffCalculatorUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
