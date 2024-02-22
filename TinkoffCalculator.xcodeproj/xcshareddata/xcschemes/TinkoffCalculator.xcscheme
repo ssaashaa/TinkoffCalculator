@@ -29,7 +29,10 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:Tests/TinkoffCalculatorUITests/Test Plans/TinkoffCalculatorUITests.xctestplan"
+            reference = "container:Tests/TinkoffCalculatorUITests/Test Plans/Regression.xctestplan">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:Tests/TinkoffCalculatorUITests/Test Plans/Smoke.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>

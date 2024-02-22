@@ -41,6 +41,8 @@ class CalculationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.backButtonTitle = "Назад"
+        
         resetLabelText()
         resetLastCalculatedNumber()
         
@@ -48,9 +50,8 @@ class CalculationViewController: UIViewController {
         
         alertView.alpha = 0
         alertView.alertText = "Вы нашли пасхалку!"
+        alertView.accessibilityIdentifier = "easterEgg"
         view.addSubview(alertView)
-        
-        historyButton.accessibilityIdentifier = "historyButton"
     }
     
     override func viewWillAppear(_ animated: Bool) {

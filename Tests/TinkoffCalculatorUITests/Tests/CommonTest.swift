@@ -14,8 +14,4 @@ class CommonTest: XCTestCase {
         continueAfterFailure = false
         XCUIApplication().launch()
     }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
 }

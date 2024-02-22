@@ -1,0 +1,40 @@
+{
+  "configurations" : [
+    {
+      "id" : "B394FF2C-4E75-4FCA-8FCC-50DDAE9C239B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "AddTest\/testAddExpressionWithFractialNumbers()",
+        "AddTest\/testAddExpressionWithNegativeNumber()",
+        "AddTest\/testAddExpressionWithZero()",
+        "ClearTest",
+        "CommonTest",
+        "DivideTest\/testDivideExpressionByZero()",
+        "DivideTest\/testDivideExpressionWithFractialNumbers()",
+        "DivideTest\/testDivideExpressionWithNegativeNumber()",
+        "DivideTest\/testDivideExpressionWithZero()",
+        "EasterEggTest",
+        "HistoryTest",
+        "MultiplyTest\/testMultiplyExpressionWithFractialNumbers()",
+        "MultiplyTest\/testMultiplyExpressionWithZero()",
+        "SubstractTest\/testSubstractExpressionWithFractialNumbers()"
+      ],
+      "target" : {
+        "containerPath" : "container:TinkoffCalculator.xcodeproj",
+        "identifier" : "5AD237992B63EC1400DD9F52",
+        "name" : "TinkoffCalculatorUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

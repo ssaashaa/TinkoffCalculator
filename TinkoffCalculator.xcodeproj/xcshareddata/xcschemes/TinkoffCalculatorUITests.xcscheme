@@ -13,8 +13,11 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:Tests/TinkoffCalculatorUITests/Test Plans/TinkoffCalculatorUITests.xctestplan"
+            reference = "container:Tests/TinkoffCalculatorUITests/Test Plans/Regression.xctestplan"
             default = "YES">
+         </TestPlanReference>
+         <TestPlanReference
+            reference = "container:Tests/TinkoffCalculatorUITests/Test Plans/Smoke.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
@@ -41,6 +44,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5AD237792B63EC1000DD9F52"
+            BuildableName = "TinkoffCalculator.app"
+            BlueprintName = "TinkoffCalculator"
+            ReferencedContainer = "container:TinkoffCalculator.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

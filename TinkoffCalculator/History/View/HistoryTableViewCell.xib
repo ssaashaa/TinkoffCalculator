@@ -18,12 +18,14 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="034-hH-U9e">
                         <rect key="frame" x="15" y="9" width="42" height="21"/>
+                        <accessibility key="accessibilityConfiguration" identifier="resultLabel"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccE-S5-yDM">
                         <rect key="frame" x="15" y="60" width="42" height="21"/>
+                        <accessibility key="accessibilityConfiguration" identifier="expressionLabel"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,6 +38,9 @@
                     <constraint firstItem="ccE-S5-yDM" firstAttribute="top" secondItem="x9d-Hy-8pr" secondAttribute="centerY" constant="15" id="lCW-kS-ZW1"/>
                 </constraints>
             </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="historyCell">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <connections>
                 <outlet property="expressionLabel" destination="ccE-S5-yDM" id="536-HI-stg"/>
                 <outlet property="resultLabel" destination="034-hH-U9e" id="Pn7-qZ-xcX"/>

@@ -84,6 +84,7 @@ extension CalculationsListViewController: UITableViewDelegate {
         sectionText.text = getCurrentDate(calculations[section].date)
         sectionText.font = .systemFont(ofSize: 14, weight: .bold)
         
+        sectionText.accessibilityIdentifier = "sectionHeader_\(section)"
         sectionHeader.addSubview(sectionText)
         
         return sectionHeader
@@ -104,6 +105,7 @@ extension CalculationsListViewController: UITableViewDataSource {
                                                  for: indexPath) as! HistoryTableViewCell
         let historyItem = calculations[indexPath.section]
         cell.configure(with: expressionToString(historyItem.expression), result: String(historyItem.result))
+        cell.accessibilityIdentifier = "historyCell_\(indexPath.section)"
         return cell
     }
 }
