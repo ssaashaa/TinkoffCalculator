@@ -41,7 +41,7 @@ final class HistoryTest: CommonTest {
             .tapHistoryButton()
         
         historyPage
-            .swipeUpFewTimes(times: 3)
+            .swipeUpFewTimes(times: 5)
             .checkDateOfNewHeader(date: currentDate)
     }
     
@@ -60,7 +60,7 @@ final class HistoryTest: CommonTest {
             .tapHistoryButton()
         
         historyPage
-            .swipeUpFewTimes(times: 3)
+            .swipeUpFewTimes(times: 5)
             .checkNewResultLabel(result: "22.0")
     }
     
@@ -78,7 +78,7 @@ final class HistoryTest: CommonTest {
             .tapHistoryButton()
         
         historyPage
-            .swipeUpFewTimes(times: 3)
+            .swipeUpFewTimes(times: 5)
             .checkNewExpressionLabel(expression: "6.0 x 78.0 ")
     }
 }

@@ -2,9 +2,23 @@
   "configurations" : [
     {
       "id" : "B394FF2C-4E75-4FCA-8FCC-50DDAE9C239B",
-      "name" : "Configuration 1",
+      "name" : "Smoke",
       "options" : {
-
+        "environmentVariableEntries" : [
+          {
+            "key" : "FB_REFERENCE_IMAGE_DIR",
+            "value" : "$(SOURCE_ROOT)\/Tests\/$(PROJECT_NAME)UITests\/Resources\/ReferenceImages"
+          },
+          {
+            "key" : "IMAGE_DIFF_DIR",
+            "value" : "$(SOURCE_ROOT)\/Tests\/$(PROJECT_NAME)UITests\/Resources\/FailureDiffs"
+          }
+        ],
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:TinkoffCalculator.xcodeproj",
+          "identifier" : "5AD237992B63EC1400DD9F52",
+          "name" : "TinkoffCalculatorUITests"
+        }
       }
     }
   ],

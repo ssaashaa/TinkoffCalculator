@@ -20,17 +20,18 @@
                         <rect key="frame" x="15" y="9" width="42" height="21"/>
                         <accessibility key="accessibilityConfiguration" identifier="resultLabel"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccE-S5-yDM">
                         <rect key="frame" x="15" y="60" width="42" height="21"/>
                         <accessibility key="accessibilityConfiguration" identifier="expressionLabel"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="034-hH-U9e" firstAttribute="leading" secondItem="x9d-Hy-8pr" secondAttribute="leading" constant="15" id="Sqt-6o-cZs"/>
                     <constraint firstItem="ccE-S5-yDM" firstAttribute="leading" secondItem="x9d-Hy-8pr" secondAttribute="leading" constant="15" id="X0A-ou-9mk"/>

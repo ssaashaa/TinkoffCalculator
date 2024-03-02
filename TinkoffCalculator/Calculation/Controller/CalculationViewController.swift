@@ -151,7 +151,7 @@ class CalculationViewController: UIViewController {
     @IBAction private func showCalculationsList(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let calculationsListVC = sb.instantiateViewController(withIdentifier: "CalculationsListViewController")
-        if let vc = calculationsListVC as? CalculationsListViewController {
+        if let vc = calculationsListVC as? HistoryViewController {
             vc.calculations = calculations
         }
         navigationController?.pushViewController(calculationsListVC, animated: true)

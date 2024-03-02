@@ -36,29 +36,6 @@
             default = "YES">
          </TestPlanReference>
       </TestPlans>
-      <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5AD2378F2B63EC1400DD9F52"
-               BuildableName = "TinkoffCalculatorTests.xctest"
-               BlueprintName = "TinkoffCalculatorTests"
-               ReferencedContainer = "container:TinkoffCalculator.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5AD237992B63EC1400DD9F52"
-               BuildableName = "TinkoffCalculatorUITests.xctest"
-               BlueprintName = "TinkoffCalculatorUITests"
-               ReferencedContainer = "container:TinkoffCalculator.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"

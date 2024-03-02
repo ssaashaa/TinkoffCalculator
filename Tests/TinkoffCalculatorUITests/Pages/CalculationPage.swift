@@ -18,7 +18,7 @@ final class CalculationPage: CommonPage {
     
     private lazy var calculationLabel = app.staticTexts["calculationLabel"].label
     
-    private lazy var easterEggAlert = app.otherElements["easterEgg"]
+    lazy var easterEggAlert = app.otherElements["easterEgg"]
     
     private lazy var historyButton = app.buttons["historyButton"]
     private lazy var clearButton = app.buttons["clearButton"]

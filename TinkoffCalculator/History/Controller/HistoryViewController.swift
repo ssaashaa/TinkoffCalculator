@@ -1,5 +1,5 @@
 //
-//  CalculationsListViewController.swift
+//  HistoryViewController.swift
 //  TinkoffCalculator
 //
 //  Created by Sasha Stryapkov on 29.01.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalculationsListViewController: UIViewController {
+class HistoryViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     var calculations: [Calculation] = []
@@ -65,7 +65,7 @@ class CalculationsListViewController: UIViewController {
     }
 }
 
-extension CalculationsListViewController: UITableViewDelegate {
+extension HistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90.0
     }
@@ -82,6 +82,7 @@ extension CalculationsListViewController: UITableViewDelegate {
                                    height: sectionHeader.frame.height - 10)
         
         sectionText.text = getCurrentDate(calculations[section].date)
+        sectionText.textColor = .white
         sectionText.font = .systemFont(ofSize: 14, weight: .bold)
         
         sectionText.accessibilityIdentifier = "sectionHeader_\(section)"
@@ -91,7 +92,7 @@ extension CalculationsListViewController: UITableViewDelegate {
     }
 }
 
-extension CalculationsListViewController: UITableViewDataSource {
+extension HistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }

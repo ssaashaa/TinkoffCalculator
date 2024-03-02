@@ -23,7 +23,7 @@ final class HistoryPage: CommonPage {
                                             .descendants(matching: .staticText)
                                             .containing(NSPredicate(format: "identifier CONTAINS %@", "sectionHeader_"))
 
-    private lazy var historyCells = app
+    lazy var historyCells = app
                                         .tables
                                         .cells
                                         .containing(NSPredicate(format: "identifier CONTAINS %@", "historyCell_"))

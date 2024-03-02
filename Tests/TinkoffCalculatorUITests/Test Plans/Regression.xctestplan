@@ -2,19 +2,35 @@
   "configurations" : [
     {
       "id" : "66FAA342-1F79-4868-8079-BDAB7FBAAE87",
-      "name" : "Configuration 1",
+      "name" : "Regression",
       "options" : {
-
+        "testExecutionOrdering" : "random"
       }
     }
   ],
   "defaultOptions" : {
     "commandLineArgumentEntries" : [
 
-    ]
+    ],
+    "environmentVariableEntries" : [
+      {
+        "key" : "FB_REFERENCE_IMAGE_DIR",
+        "value" : "$(SOURCE_ROOT)\/Tests\/$(PROJECT_NAME)UITests\/Resources\/ReferenceImages"
+      },
+      {
+        "key" : "IMAGE_DIFF_DIR",
+        "value" : "$(SOURCE_ROOT)\/Tests\/$(PROJECT_NAME)UITests\/Resources\/FailureDiffs"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:TinkoffCalculator.xcodeproj",
+      "identifier" : "5AD237992B63EC1400DD9F52",
+      "name" : "TinkoffCalculatorUITests"
+    }
   },
   "testTargets" : [
     {
+      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:TinkoffCalculator.xcodeproj",
         "identifier" : "5AD237992B63EC1400DD9F52",
