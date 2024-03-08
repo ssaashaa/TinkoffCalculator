@@ -27,9 +27,9 @@
 
 |Manually adding up numbers|XCUITest - Divide by zero|XCUITest - Checking history cell|
 |:-:|:-:|:-:|
-|[<img src="./Images/APP_DEMO.gif" height="400" width="185"/>]("./Images/APP_DEMO.gif")|[<img src="./Images/TEST_DEMO_1.gif" height="400" width="185"/>]("./Images/TEST_DEMO_1.gif")|[<img src="./Images/TEST_DEMO_2.gif" height="400" width="185"/>]("./Images/TEST_DEMO_2.gif")|
+|[<img src="./Images/APP_DEMO.gif" height="400" width="185"/>](./Images/APP_DEMO.gif)|[<img src="./Images/TEST_DEMO_1.gif" height="400" width="185"/>](./Images/TEST_DEMO_1.gif)|[<img src="./Images/TEST_DEMO_2.gif" height="400" width="185"/>](./Images/TEST_DEMO_2.gif)|
 
-|Allure Report                                                                                           |
-| ------------------------------------------------------------------------------------------------------ |
-| [<img src="./Images/ALLURE_REPORT_1.png" height="350" width="710"/>]("./Images/ALLURE_REPORT_1.png") |
-| [<img src="./Images/ALLURE_REPORT_2.png" height="350" width="710"/>]("./Images/ALLURE_REPORT_2.png") |
+|Allure Report                                                                                       |
+| -------------------------------------------------------------------------------------------------- |
+| [<img src="./Images/ALLURE_REPORT_1.png" height="350" width="710"/>](./Images/ALLURE_REPORT_1.png) |
+| [<img src="./Images/ALLURE_REPORT_2.png" height="350" width="710"/>](./Images/ALLURE_REPORT_2.png) |
