@@ -12,6 +12,10 @@ final class HistoryTest: CommonTest {
     private let historyPage = HistoryPage()
     
     func testHistoryPageNavigationBarLabels() {
+        link("T-23")
+        feature("Отображение экрана \"Прошлые вычисления\"")
+        severity("BLOCKER")
+        
         calculationPage
             .tapHistoryButton()
         
@@ -21,6 +25,10 @@ final class HistoryTest: CommonTest {
     }
     
     func testHistoryButtonClick() {
+        link("T-24")
+        feature("Работоспобность кнопки \"Прошлые вычисления\"")
+        severity("BLOCKER")
+        
         calculationPage
             .tapHistoryButton()
         
@@ -29,6 +37,10 @@ final class HistoryTest: CommonTest {
     }
     
     func testHistoryDateHeaderAfterMakingExperssion() {
+        link("T-25")
+        feature("Отображение даты вычисления в истории вычислений")
+        severity("NORMAL")
+        
         calculationPage
             .tapDigitOneButton()
             .tapAddButton()
@@ -46,6 +58,10 @@ final class HistoryTest: CommonTest {
     }
     
     func testHistoryCellResultLabelAfterMakingExperssion() {
+        link("T-26")
+        feature("Отображение результата вычисления в истории вычислений")
+        severity("NORMAL")
+        
         calculationPage
             .tapDigitFiveButton()
             .tapDigitFourButton()
@@ -65,6 +81,10 @@ final class HistoryTest: CommonTest {
     }
     
     func testHistoryCellExpressionLabelAfterMakingExperssion() {
+        link("T-27")
+        feature("Отображение вычисления в истории вычислений")
+        severity("NORMAL")
+        
         calculationPage
             .tapDigitSixButton()
         

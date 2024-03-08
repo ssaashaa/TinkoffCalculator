@@ -41,6 +41,7 @@
         "HistoryTest",
         "MultiplyTest\/testMultiplyExpressionWithFractialNumbers()",
         "MultiplyTest\/testMultiplyExpressionWithZero()",
+        "SnapshotTest",
         "SubstractTest\/testSubstractExpressionWithFractialNumbers()"
       ],
       "target" : {

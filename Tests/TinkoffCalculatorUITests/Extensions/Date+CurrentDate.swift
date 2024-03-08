@@ -1,5 +1,5 @@
 //
-//  DateExtension.swift
+//  Date+CurrentDate.swift
 //  TinkoffCalculator
 //
 //  Created by Sasha Stryapkov on 21.02.2024.

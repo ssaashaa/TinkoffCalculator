@@ -1,5 +1,5 @@
 //
-//  UIImageExtension.swift
+//  UIImage+ImageCrop.swift
 //  TinkoffCalculatorUITests
 //
 //  Created by Sasha Stryapkov on 25.02.2024.
@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIImage {
-    
     var removingStatusBar: UIImage? {
         guard let cgImage = cgImage else {
             return nil

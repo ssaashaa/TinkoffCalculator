@@ -12,10 +12,18 @@ final class SnapshotTest: CommonTest {
     private let historyPage = HistoryPage()
     
     func testCalculationScreenSnapshot() {
+        link("T-28")
+        feature("Отображение экрана \"Калькулятор\"")
+        severity("NORMAL")
+        
         verifyView(identifier: "imageCalculationScreen")
     }
     
     func testEasterEggAlertSnapshot() {
+        link("T-29")
+        feature("Отображение пасхалки")
+        severity("MINOR")
+        
         calculationPage.enterNumberPI()
         let easterEggAlert = calculationPage.easterEggAlert
         Thread.sleep(forTimeInterval: 5)
@@ -23,6 +31,10 @@ final class SnapshotTest: CommonTest {
     }
     
     func testHistoryCellSnapshot() {
+        link("T-30")
+        feature("Отображение ячейки вычислений в истории вычислений")
+        severity("NORMAL")
+        
         calculationPage
             .tapDigitFiveButton()
             .tapDigitFourButton()

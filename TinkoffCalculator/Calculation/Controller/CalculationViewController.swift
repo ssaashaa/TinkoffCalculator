@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CalculationViewController.swift
 //  TinkoffCalculator
 //
 //  Created by Sasha Stryapkov on 26.01.2024.

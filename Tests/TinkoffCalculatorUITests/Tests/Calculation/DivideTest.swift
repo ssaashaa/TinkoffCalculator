@@ -11,6 +11,10 @@ final class DivideTest: CommonTest {
     private let calculationPage = CalculationPage()
     
     func testDivideExpressionWithWholeNumbers() {
+        link("T-15")
+        feature("Деление целых чисел")
+        severity("BLOCKER")
+        
         calculationPage
             .tapDigitNineButton()
             .tapDigitEightButton()
@@ -25,6 +29,10 @@ final class DivideTest: CommonTest {
     }
     
     func testDivideExpressionWithFractialNumbers() {
+        link("T-16")
+        feature("Деление дробных чисел")
+        severity("NORMAL")
+        
         calculationPage
             .tapCommaButton()
             .tapDigitOneButton()
@@ -42,6 +50,10 @@ final class DivideTest: CommonTest {
     }
     
     func testDivideExpressionWithZero() {
+        link("T-17")
+        feature("Деление нуля на число")
+        severity("NORMAL")
+        
         calculationPage
             .tapDivideButton()
         
@@ -53,6 +65,10 @@ final class DivideTest: CommonTest {
     }
     
     func testDivideExpressionByZero() {
+        link("T-18")
+        feature("Деление на ноль")
+        severity("NORMAL")
+        
         calculationPage
             .tapDigitEightButton()
             .tapDigitNineButton()
@@ -67,6 +83,10 @@ final class DivideTest: CommonTest {
     }
     
     func testDivideExpressionWithNegativeNumber() {
+        link("T-19")
+        feature("Деление отрицательного числа")
+        severity("NORMAL")
+        
         calculationPage
             .tapSubstractButton()
     

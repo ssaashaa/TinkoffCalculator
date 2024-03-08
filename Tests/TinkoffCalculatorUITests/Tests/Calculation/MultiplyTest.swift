@@ -11,6 +11,10 @@ final class MultiplyTest: CommonTest {
     private let calculationPage = CalculationPage()
     
     func testMultiplyExpressionWithWholeNumbers() {
+        link("T-11")
+        feature("Умножение целых чисел")
+        severity("BLOCKER")
+        
         calculationPage
             .tapDigitTwoButton()
             .tapDigitThreeButton()
@@ -26,6 +30,10 @@ final class MultiplyTest: CommonTest {
     }
     
     func testMultiplyExpressionWithFractialNumbers() {
+        link("T-12")
+        feature("Умножение дробных чисел")
+        severity("NORMAL")
+        
         calculationPage
             .tapCommaButton()
             .tapDigitSevenButton()
@@ -44,6 +52,10 @@ final class MultiplyTest: CommonTest {
     }
     
     func testMultiplyExpressionWithZero() {
+        link("T-13")
+        feature("Умножение на ноль")
+        severity("NORMAL")
+        
         calculationPage
             .tapDigitTwoButton()
             .tapDigitThreeButton()
@@ -58,6 +70,10 @@ final class MultiplyTest: CommonTest {
     }
     
     func testMultiplyExpressionWithNegativeNumber() {
+        link("T-14")
+        feature("Умножение отрицательного числа")
+        severity("NORMAL")
+        
         calculationPage
             .tapSubstractButton()
             

@@ -11,6 +11,10 @@ final class SubstractTest: CommonTest {
     private let calculationPage = CalculationPage()
     
     func testSubstractExpressionWithWholeNumbers() {
+        link("T-7")
+        feature("Вычитание целых чисел")
+        severity("BLOCKER")
+        
         calculationPage
             .tapDigitTwoButton()
             .tapDigitThreeButton()
@@ -26,6 +30,10 @@ final class SubstractTest: CommonTest {
     }
     
     func testSubstractExpressionWithFractialNumbers() {
+        link("T-8")
+        feature("Вычитание дробных чисел")
+        severity("NORMAL")
+        
         calculationPage
             .tapCommaButton()
             .tapDigitFiveButton()
@@ -46,6 +54,10 @@ final class SubstractTest: CommonTest {
     }
     
     func testSubstractExpressionWithZero() {
+        link("T-9")
+        feature("Вычитание с нулём")
+        severity("NORMAL")
+        
         calculationPage
             .tapDigitTwoButton()
             .tapDigitThreeButton()
@@ -60,6 +72,10 @@ final class SubstractTest: CommonTest {
     }
     
     func testSubstractExpressionWithNegativeNumber() {
+        link("T-10")
+        feature("Вычитание с отрицательным числом")
+        severity("NORMAL")
+        
         calculationPage
             .tapSubstractButton()
             

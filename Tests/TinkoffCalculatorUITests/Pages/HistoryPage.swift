@@ -30,56 +30,82 @@ final class HistoryPage: CommonPage {
 
     @discardableResult
     func getBackFromHistoryPage() -> Self {
-        backButton.tapElement()
+        step("Тап по кнопке \"Назад\"") {
+            backButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func checkNavigationBarTitleOnHistoryPage() -> Self {
-        XCTAssertTrue(nameOfHistoryPageNavbarTitle == nameOfHistoryPageNavBarText)
+        step("Проверка имени экрана в панели навигации") {
+            XCTAssertTrue(nameOfHistoryPageNavbarTitle == nameOfHistoryPageNavBarText)
+        }
         return self
     }
     
     @discardableResult
     func checkNavigationBarBackButtonTitleOnHistoryPage() -> Self {
-        XCTAssertTrue(backButton.label == nameOfhistoryPageNavBarBackButtonText)
+        step("Проверка имени кнопки возврата с экрана в панели навигации") {
+            XCTAssertTrue(backButton.label == nameOfhistoryPageNavBarBackButtonText)
+        }
         return self
     }
     
     @discardableResult
     func checkDateOfNewHeader(date: String) -> Self {
-        let historyDateHeaderLabel = historyDateHeaders
-                                                .element(matching: .staticText,
-                                                         identifier: "sectionHeader_\(historyCells.count - 1)")
-                                                .label
-
-        XCTAssertTrue(historyDateHeaderLabel == date)
+        var historyDateHeaderLabel = String()
+        
+        step("Поиск даты вычисления в приложении") {
+            historyDateHeaderLabel = historyDateHeaders
+                                                    .element(matching: .staticText,
+                                                             identifier: "sectionHeader_\(historyCells.count - 1)")
+                                                    .label
+        }
+        
+        step("Проверка отображаемой даты вычисления") {
+            XCTAssertTrue(historyDateHeaderLabel == date)
+        }
         return self
     }
     
     @discardableResult
     func checkNewResultLabel(result: String) -> Self {
-        let resultLabel = historyCells
+        var resultLabel = String()
+        
+        step("Поиск лейбла результата в приложении") {
+            resultLabel = historyCells
                                     .containing(NSPredicate(format: "identifier CONTAINS %@",
                                                             "historyCell_\(historyCells.count - 1)"))
                                     .descendants(matching: .staticText)
                                     .element(matching: .staticText,
                                              identifier: "resultLabel")
                                     .label
-        XCTAssertTrue(resultLabel == result)
+        }
+    
+        step("Проверка отображаемого результата вычисления") {
+            XCTAssertTrue(resultLabel == result)
+        }
         return self
     }
     
     @discardableResult
     func checkNewExpressionLabel(expression: String) -> Self {
-        let expressionLabel = historyCells
+        var expressionLabel = String()
+        
+        step("Поиск лейбла с выражением в приложении") {
+            expressionLabel = historyCells
                                     .containing(NSPredicate(format: "identifier CONTAINS %@",
                                                             "historyCell_\(historyCells.count - 1)"))
                                     .descendants(matching: .staticText)
                                     .element(matching: .staticText,
                                              identifier: "expressionLabel")
                                     .label
-        XCTAssertTrue(expressionLabel == expression)
+        }
+    
+        step("Проверка отображаемого вычисления") {
+            XCTAssertTrue(expressionLabel == expression)
+        }
         return self
     }
 }

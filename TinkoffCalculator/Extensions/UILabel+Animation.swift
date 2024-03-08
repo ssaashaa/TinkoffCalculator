@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  UILabel+Animation.swift
 //  TinkoffCalculator
 //
 //  Created by Sasha Stryapkov on 01.02.2024.

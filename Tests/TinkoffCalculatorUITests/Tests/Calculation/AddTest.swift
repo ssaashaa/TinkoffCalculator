@@ -11,6 +11,9 @@ final class AddTest: CommonTest {
     private let calculationPage = CalculationPage()
     
     func testAddExpressionWithWholeNumbers() {
+        link("T-3")
+        feature("Сложение целых чисел")
+        severity("BLOCKER")
         calculationPage
             .tapDigitOneButton()
             .tapDigitTwoButton()
@@ -26,6 +29,10 @@ final class AddTest: CommonTest {
     }
     
     func testAddExpressionWithFractialNumbers() {
+        link("T-4")
+        feature("Сложение дробных чисел")
+        severity("NORMAL")
+        
         calculationPage
             .tapCommaButton()
             .tapDigitFiveButton()
@@ -44,6 +51,10 @@ final class AddTest: CommonTest {
     }
     
     func testAddExpressionWithZero() {
+        link("T-5")
+        feature("Сложение с нулём")
+        severity("NORMAL")
+        
         calculationPage
             .tapDigitFourButton()
             .tapDigitFiveButton()
@@ -58,6 +69,10 @@ final class AddTest: CommonTest {
     }
         
     func testAddExpressionWithNegativeNumber() {
+        link("T-6")
+        feature("Сложение с отрицательным числом")
+        severity("NORMAL")
+        
         calculationPage
             .tapSubstractButton()
             

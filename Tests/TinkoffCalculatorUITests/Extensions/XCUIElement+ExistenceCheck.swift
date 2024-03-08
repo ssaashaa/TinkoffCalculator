@@ -1,5 +1,5 @@
 //
-//  XCUIElementExtensions.swift
+//  XCUIElement+ExistenceCheck.swift
 //  TinkoffCalculatorUITests
 //
 //  Created by Sasha Stryapkov on 15.02.2024.

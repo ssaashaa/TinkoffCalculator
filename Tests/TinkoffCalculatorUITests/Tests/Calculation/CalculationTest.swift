@@ -11,12 +11,20 @@ final class CalculationTest: CommonTest {
     private let calculationPage = CalculationPage()
     
     func testCalculationPageLabels() {
+        link("T-1")
+        feature("Отображение экрана \"Калькулятор\"")
+        severity("BLOCKER")
+        
         calculationPage
             .checkNavigationBarTitleOnCalculationPage()
             .checkCalculationResultLabel("0")
     }
     
     func testCalculationPageButtons() {
+        link("T-2")
+        feature("Работоспобность кнопок на экране \"Калькулятор\"")
+        severity("BLOCKER")
+        
         calculationPage
             .tapCommaButton()
             .tapDigitZeroButton()

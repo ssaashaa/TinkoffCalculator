@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CalculationPage.swift
 //  TinkoffCalculatorUITests
 //
 //  Created by Sasha Stryapkov on 07.02.2024.
@@ -44,153 +44,207 @@ final class CalculationPage: CommonPage {
     
     @discardableResult
     func tapHistoryButton() -> Self {
-        historyButton.tapElement()
+        step("Тап по кнопке \"Прошлые вычисления\"") {
+            historyButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapClearButton() -> Self {
-        clearButton.tapElement()
+        step("Тап по кнопке \"Очистить\"") {
+            clearButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapDivideButton() -> Self {
-        divideButton.tapElement()
+        step("Тап по кнопке \"Разделить\"") {
+            divideButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapMultiplyButton() -> Self {
-        multiplyButton.tapElement()
+        step("Тап по кнопке \"Умножить\"") {
+            multiplyButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapSubstractButton() -> Self {
-        substractButton.tapElement()
+        step("Тап по кнопке \"Вычесть\"") {
+            substractButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapAddButton() -> Self {
-        addButton.tapElement()
+        step("Тап по кнопке \"Сложить\"") {
+            addButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapCalculateButton() -> Self {
-        calculateButton.tapElement()
+        step("Тап по кнопке \"Вычислить\"") {
+            calculateButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapCommaButton() -> Self {
-        commaButton.tapElement()
+        step("Тап по кнопке \"Запятая\"") {
+            commaButton.tapElement()
+        }
+        
         return self
     }
     
     @discardableResult
     func tapDigitZeroButton() -> Self {
-        digitZeroButton.tapElement()
+        step("Тап по кнопке \"Ноль\"") {
+            digitZeroButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapDigitOneButton() -> Self {
-        digitOneButton.tapElement()
+        step("Тап по кнопке \"Один\"") {
+            digitOneButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapDigitTwoButton() -> Self {
-        digitTwoButton.tapElement()
+        step("Тап по кнопке \"Два\"") {
+            digitTwoButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapDigitThreeButton() -> Self {
-        digitThreeButton.tapElement()
+        step("Тап по кнопке \"Три\"") {
+            digitThreeButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapDigitFourButton() -> Self {
-        digitFourButton.tapElement()
+        step("Тап по кнопке \"Четыре\"") {
+            digitFourButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapDigitFiveButton() -> Self {
-        digitFiveButton.tapElement()
+        step("Тап по кнопке \"Пять\"") {
+            digitFiveButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapDigitSixButton() -> Self {
-        digitSixButton.tapElement()
+        step("Тап по кнопке \"Шесть\"") {
+            digitSixButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapDigitSevenButton() -> Self {
-        digitSevenButton.tapElement()
+        step("Тап по кнопке \"Семь\"") {
+            digitSevenButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapDigitEightButton() -> Self {
-        digitEightButton.tapElement()
+        step("Тап по кнопке \"Восемь\"") {
+            digitEightButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapDigitNineButton() -> Self {
-        digitNineButton.tapElement()
+        step("Тап по кнопке \"Девять\"") {
+            digitNineButton.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func tapEasterEggAlert() -> Self {
-        easterEggAlert.tapElement()
+        step("Тап по алёрту \"Пасхалка\"") {
+            easterEggAlert.tapElement()
+        }
         return self
     }
     
     @discardableResult
     func enterNumberPI() -> Self {
-        tapDigitThreeButton()
-        tapCommaButton()
-        tapDigitOneButton()
-        tapDigitFourButton()
-        tapDigitOneButton()
-        tapDigitFiveButton()
-        tapDigitNineButton()
-        tapDigitTwoButton()
+        step("Ввод числа Pi") {
+            tapDigitThreeButton()
+            tapCommaButton()
+            tapDigitOneButton()
+            tapDigitFourButton()
+            tapDigitOneButton()
+            tapDigitFiveButton()
+            tapDigitNineButton()
+            tapDigitTwoButton()
+        }
         return self
     }
     
     @discardableResult
     func checkNavigationBarTitleOnCalculationPage() -> Self {
-        XCTAssertTrue(nameOfCalculationPageNavbarTitle == nameOfCalculationPageNavBarText)
+        step("Проверка имени экрана в панели навигации") {
+            XCTAssertTrue(nameOfCalculationPageNavbarTitle == nameOfCalculationPageNavBarText)
+        }
         return self
     }
     
     @discardableResult
     func checkCalculationResultLabel(_ result: String) -> Self {
-        XCTAssertTrue(calculationLabel == result)
+        step("Проверка отображения результата в лейбле") {
+            XCTAssertTrue(calculationLabel == result)
+        }
         return self
     }
     
     @discardableResult
     func checkEasterEggAlertIsVisible() -> Self {
-        XCTAssertTrue(easterEggAlert.isEnabled)
+        step("Проверка отображения пасхалки на экране") {
+            XCTAssertTrue(easterEggAlert.isEnabled)
+        }
         return self
     }
     
     @discardableResult
     func checkEasterEggLabelText() -> Self {
-        let easterEggAlertLabel = easterEggAlert.descendants(matching: .staticText).firstMatch.label
-        XCTAssertTrue(easterEggAlertLabel == easterEggLabelText)
+        var easterEggAlertLabel = String()
+        
+        step("Поиск лейбла пасхалки в приложении") {
+            easterEggAlertLabel = easterEggAlert.descendants(matching: .staticText).firstMatch.label
+        }
+        
+        step("Проверка содержания текста в пасхалке") {
+            XCTAssertTrue(easterEggAlertLabel == easterEggLabelText)
+        }
         return self
     }
 }

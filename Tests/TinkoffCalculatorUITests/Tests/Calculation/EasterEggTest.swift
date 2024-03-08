@@ -11,6 +11,10 @@ final class EasterEggTest: CommonTest {
     private let calculationPage = CalculationPage()
     
     func testEasterEggAppearanceAndDissapearance() {
+        link("T-21")
+        feature("Отображение пасхалки")
+        severity("MINOR")
+        
         calculationPage
             .enterNumberPI()
             .checkEasterEggAlertIsVisible()
@@ -18,6 +22,10 @@ final class EasterEggTest: CommonTest {
     }
     
     func testEasterEggLabel() {
+        link("T-22")
+        feature("Содержание пасхалки")
+        severity("MINOR")
+        
         calculationPage
             .enterNumberPI()
             .checkEasterEggLabelText()

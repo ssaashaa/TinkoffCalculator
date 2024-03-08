@@ -11,6 +11,10 @@ final class ClearTest: CommonTest {
     private let calculationPage = CalculationPage()
     
     func testClearButtonClick() {
+        link("T-20")
+        feature("Очистка результата")
+        severity("BLOCKER")
+        
         calculationPage
             .tapCommaButton()
             .tapDigitZeroButton()

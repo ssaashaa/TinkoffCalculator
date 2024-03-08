@@ -1,5 +1,5 @@
 //
-//  UIDeviceExtension.swift
+//  UIDevice+MapToDevice.swift
 //  TinkoffCalculatorUITests
 //
 //  Created by Sasha Stryapkov on 25.02.2024.
@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIDevice {
-    
     static let modelName: String = {
         var systemInfo = utsname()
         uname(&systemInfo)
